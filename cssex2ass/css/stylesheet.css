@@ -1,0 +1,42 @@
+.box {
+    border: 1px solid black;
+    padding: 20px;
+    margin: 10px 50px;
+    overflow: hidden;
+}
+
+.sample-img {
+    position: relative;
+    top: 0;
+    opacity: 0;
+}
+
+@keyframes ImageSlide {
+    0% {
+        left: 0%;
+        opacity: 1;
+    }
+    100% {
+        left: 100%;
+        opacity: 1;
+    }
+}
+
+.sample-img:nth-child(1) {
+    animation: ImageSlide 8s ;
+}
+
+.sample-img:nth-child(2) {
+    animation: ImageSlide 8s ;
+    animation-delay: 8s;
+}
+
+.sample-img:nth-child(3) {
+    animation: ImageSlide 8s ;
+    animation-delay: 16s;
+}
+.sample-img:nth-child(4)
+{
+    animation:ImageSlide 8s;
+    animation-delay: 24s;
+}
