@@ -1,0 +1,201 @@
+<html>
+    <head>
+        <title>html assignment 7</title>
+       <style>
+            .main{
+                width:100%;
+                display:flex;
+            }
+            .one{
+                display: flex;
+               width: 30%;
+               height: 100%;
+
+            }
+            .two{
+                width: 70%;
+                height: 100%;
+            }
+            .some{
+                margin-left: 10px;
+                margin-right: 10px;
+
+            }
+            .car1{
+                display: inline-block;
+                justify-content: space-between;
+            }
+            .some1{
+                border: 1px solid;
+                background-color: blue;
+                margin: 50px;
+                padding: 20px;
+
+            }
+            .san1{
+                display: inline-block;
+                margin: 40px;
+                padding: 15px;
+                border: 1px solid;
+            }
+            #firsttable table {
+            border: 1px solid black; 
+            border-collapse: collapse; 
+            }
+            #firsttable tr {
+            border-bottom: 1px solid grey; 
+              }
+            #firsttable td {
+            border-left: none; 
+            border-right: none;
+            }
+            #secondtable table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                width: 50%;
+            }
+            #secondtable th
+            {
+                border-left: 1px solid;
+                border-right: 1px solid;
+            }
+            #firsttable table tr:first-child {
+            background-color: lightblue;
+            }
+
+       </style>
+        
+    </head>
+    <body>
+        <div class="main">
+            <div class="one">
+                <div class="some">
+                <li class="some1">sales oreder</li>
+                <li class="some1">purchase invoice</li>
+                <li class="some1">stock category</li>
+                <li class="some1">employees</li>
+                </div>
+            </div>
+            <div class="two">
+
+                <div class="onefirst">
+                    <p class="car1">Manufacturing and company </p>
+                    <p class="car1"><a href="logout">logout </a></p>
+                </div>
+                <div class="onetwo">
+                    <li class="san1">TOTAL SALES <br>6181</li>
+                    <li class="san1">TOTAL PROFIT <br>INR 90K</li>
+                    <li class="san1">STOCK QTYS <br> 1153</li>
+                    <li class="san1">EMPLOYEES <br>160</li>
+                </div>
+                <br>
+                <div id="firsttable">
+                    <table style="width: 100%;">
+                        <thead>
+                            <tr >
+                            
+                                <th>ID</th>
+                                <th>DATE</th>
+                                <th>CATEGORY</th>
+                                <th>PRODUCT</th>
+                                <th>COST</th>
+                                <th>QTYS</th>
+                                <th>ACTION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style>
+                                <th>1</th>
+                                <th>1 feb</th>
+                                <th>grossery</th>
+                                <th>Oil</th>
+                                <th>200</th>
+                                <th>2</th>
+                                <th>xx</th>
+                            </tr>
+                            <tr>
+                                <th>2</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th>3</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th>4</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th>5</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th>6</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="secondtable">
+                    <table >
+                        
+                        <thead >
+                            <tr >Categoriwise profit 2023</tr>
+                        </thead>
+                       
+                        <tbody>
+                            <tr>
+                                <th>ID</th>
+                                <th>Category</th>
+                                <th>profit</th>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <th>grossery</th>
+                                <th>INR 80k</th>
+                            </tr>
+                            <tr>
+                                <th>2</th>
+                                <th>sports</th>
+                                <th>INR 15k</th>
+                            </tr>
+                            <tr>
+                                <th>3</th>
+                                <th>Electronics</th>
+                                <th>INR 60k</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

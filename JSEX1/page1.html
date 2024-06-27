@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>JavaScript Ex1</title>
+    </head>
+
+    <body>
+        <h1>JavaScript Output Function</h1>
+        <hr>
+
+        <!-- onclick is button event. It is used to trigger javascript function whenever button clicked -->
+        <button onclick="show1()">Console Button</button>
+        <button onclick="show2()">Document Button</button>
+        <button onclick="show3()">Alert Button</button>
+        <button onclick="show4()">Prompt Button</button>
+
+        <div id="div-1" style="border:1px solid black;margin:10px;padding:10px;width:100px">
+            <p>Hello</p>
+        </div>
+
+        <button onclick="slideDiv()">Slide right</button>
+
+
+        <script>
+            function show1()
+            {
+                console.log("Hello JavaScript!");
+            }
+
+            function show2()
+            {
+                document.write("<h1>Welcome to Javascript Programming!</h1>");
+            }
+
+            function show3()
+            {
+                alert("Hello World!");
+            }
+
+            function show4()
+            {
+               var msg = prompt("Enter message");
+               alert(msg);
+            }
+
+            var dw = 100;
+            function slideDiv()
+            {
+                var ref = document.getElementById("div-1");
+                ref.style = "margin-left:"+dw+"px;";
+                dw+=100;
+            }
+        </script>
+    </body>
+</html>

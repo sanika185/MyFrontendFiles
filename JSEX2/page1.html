@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>JavaScript Ex1</title>
+    </head>
+
+    <body>
+        <h1>JavaScript getElementById</h1>
+        <hr>
+
+        <input type="text" id="txt-username" placeholder="enter username*" style="font-size: 30px;border:1px solid;" />
+        <button onclick="showUser()">Show User</button>
+
+
+        <script>
+            function showUser()
+            {
+                var user = document.getElementById("txt-username");
+                alert(user.value);
+                console.log(user.style.fontSize);
+            }
+        </script>
+    </body>
+</html>
