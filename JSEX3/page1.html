@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <title>JavaScript Ex3</title>
+    <link rel="stylesheet" href="./css/stylesheet.css">
+</head>
+
+<body>
+    <h1>JavaScript Radio Button event handling</h1>
+    <hr>
+
+    <div class="section">
+        <div class="item">
+            <input type="radio" name="menu" id="m1" value="Pizza" onchange="selectMenu(this)" />
+            <label for="m1">Pizza</label>
+        </div>
+
+        <div class="item">
+            <input type="radio" name="menu" id="m2" value="Burger" onchange="selectMenu(this)" />
+            <label for="m2">Burger</label>
+        </div>
+
+        <div class="item">
+            <input type="radio" name="menu" id="m3" value="Cold Drink" onchange="selectMenu(this)" />
+            <label for="m3">Cold Drink</label>
+        </div>
+
+        <div class="item">
+            <input type="radio" name="menu" id="m4" value="Coffee" onchange="selectMenu(this)" />
+            <label for="m4">Coffee</label>
+        </div>
+
+        <h3 id="h3-ans">null</h3>
+    </div>
+
+    <div class="section">
+        <div class="item">
+            <input type="checkbox" id="c1" value="Python Programming" onchange="selectOption(this)"/>
+            <label for="c1">Python Programming</label>
+        </div>
+
+        <div class="item">
+            <input type="checkbox" id="c2" value="Java Programming" onchange="selectOption(this)"/>
+            <label for="c2">Java Programming</label>
+        </div>
+
+        <div class="item">
+            <input type="checkbox" id="c3" value="Swift Programming" onchange="selectOption(this)"/>
+            <label for="c3">Swift Programming</label>
+        </div>
+
+        <div class="item">
+            <input type="checkbox" id="c4" value="Javascript Programming" onchange="selectOption(this)"/>
+            <label for="c4">Javascript Programming</label>
+        </div>
+
+        <h3 id="ch-ans">null</h3>
+    </div>
+
+    <script>
+        //"target" is function argument, "this" is function parameter
+        function selectMenu(target) {
+            //console.log(target.value);
+            document.getElementById("h3-ans").innerHTML = "You selected " + target.value;
+        }
+
+        var uniqueCourse = new Set();           //only allow user to add unique item
+        function selectOption(target)
+        {
+            //console.log(target.value);
+            if(target.checked==true)
+                uniqueCourse.add(target.value);
+            else
+                uniqueCourse.delete(target.value);
+
+            console.log(uniqueCourse);
+
+            document.getElementById("ch-ans").innerHTML = Array.from(uniqueCourse);
+
+
+        }
+    </script>
+</body>
+
+</html>
