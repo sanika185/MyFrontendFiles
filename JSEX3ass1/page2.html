@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Distance converter</title>
+    </head>
+    <body>
+        <h1>Distance converter</h1>
+        <hr>
+
+        <div class="section">
+            <input type="number"id="input"placeholder="enter">
+            <button onclick="convert()">convert</button>
+            <p id="result"></p>
+        </div>
+        <script>
+            function convert()
+            {
+            var km= parseFloat(document.getElementById("input").value);
+            var m=km*100;
+            var cm=km*1000;
+            var result= "in meters"+m+ " m <br> in centi meters" +cm+ "cm";
+            document.getElementById("result").innerHTML=result;
+            }
+        </script>
+    </body>
+</html>
