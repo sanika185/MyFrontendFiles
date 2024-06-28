@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>JavaScript Ex3</title>
+        <link rel="stylesheet" href="./css/stylesheet.css">
+    </head>
+
+    <body>
+        <h1>JavaScript Ex3</h1>
+        <hr>
+
+        <div class="section">
+            <input type="text" id="txt-1" placeholder="enter no" />
+            <button onclick="checkNumber()">check</button>
+
+
+            <p id="p-ans1">null</p>
+        </div>
+
+        <div class="section">
+            <input type="text" id="txt-2" placeholder="enter a" />
+            <input type="text" id="txt-3" placeholder="enter b" />
+
+            <button onclick="findMax()">find Max</button>
+
+            <p id="p-ans2">null</p>
+        </div>
+
+
+        <script>
+            function checkNumber()
+            {
+                var x = Number(document.getElementById("txt-1").value);
+
+                if(x>0)
+                {
+                    document.getElementById("p-ans1").innerHTML = "It is Positive";
+                }
+                else if(x<0)
+                {
+                    document.getElementById("p-ans1").innerHTML = "It is Negative";
+                }
+                else
+                {
+                    document.getElementById("p-ans1").innerHTML = "It is Zero";
+                }
+            }
+        
+            function findMax()
+            {
+                var firstNumber = Number(document.getElementById("txt-2").value);
+                var secondNumber = Number(document.getElementById("txt-3").value);
+
+                if(firstNumber>secondNumber)
+                {
+                    document.getElementById("p-ans2").innerHTML = firstNumber + " is Max";
+                }
+                else
+                {
+                    document.getElementById("p-ans2").innerHTML = secondNumber + " is Max";
+                }
+            }
+        </script>
+    </body>
+</html>
