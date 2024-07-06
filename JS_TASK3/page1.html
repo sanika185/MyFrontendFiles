@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Student Grade Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 20px;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="number"], button {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: rgb(6, 215, 215);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: rgb(6, 215, 215);
+        }
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Grade Calculator</h1>
+        <hr>
+    
+        <div class="section">
+            <label>Enter Percentage Scored:</label>
+            <input type="number" id="percentageInput" placeholder="Enter percentage">
+    
+            <button onclick="calculateGrade()">Calculate Grade</button>
+    
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <script>
+        function calculateGrade() {
+            var percentage = parseFloat(document.getElementById("percentageInput").value);
+
+            if (isNaN(percentage) || percentage < 0 || percentage > 100) {
+                alert("Please enter a valid percentage between 0 and 100.");
+                return;
+            }
+
+            var grade;
+
+            if (percentage >= 75) {
+                grade = "Distinction";
+            } else if (percentage >= 60) {
+                grade = "First Class";
+            } else if (percentage >= 50) {
+                grade = "Second Class";
+            } else if (percentage >= 40) {
+                grade = "Pass";
+            } else {
+                grade = "Fail";
+            }
+
+            document.getElementById("result").innerHTML = "Grade: " + grade;
+        }
+    </script>
+</body>
+</html>
