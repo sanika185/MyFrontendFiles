@@ -1,0 +1,70 @@
+<!-- Ask user to select gender using radio button either male/female and using textbox input age. check for following conditions and 
+show output whether employee is eligible for insurance or not ?
+
+ a) employee gender is male and age is between 25 to 65
+ b) employee gender is female and age is between 21 to 61
+   -->
+   <html>
+    <head> 
+        <title>Insurance Eligibility Checker</title>
+        <link rel="stylesheet" href="./css/stylesheet.css">
+    </head>
+    <body>
+        <h1>Insurance Eligibility Checker</h1>
+        <hr>
+        
+        <div class="section">
+            <h3 class="question-title">
+                <i class="fa-solid fa-clipboard-question"></i>
+                Check condition and print whether employee is eligible for insurance or not
+            </h3>
+            <div class="que-description">
+                <ol>
+                    <li>employee is male and age is between 25 to 65</li>
+                    <li>employee is female and age is between 21 to 61</li>
+                </ol>
+            </div>
+            <label>Select Gender:</label><br>
+            <input type="radio" name="gender" value="male" id="maleRadio">
+            <label for="maleRadio">Male</label><br>
+            <input type="radio" name="gender" value="female" id="femaleRadio">
+            <label for="femaleRadio">Female</label><br><br>
+            
+            <label>Enter Age:</label><br>
+            <input type="number" id="ageInput" placeholder="Enter your age"><br><br>
+    
+            <button onclick="checkEligibility()">Check Eligibility</button><br><br>
+    
+            <p id="result"></p>
+        </div>
+    
+        <script>
+            function checkEligibility() {
+            
+                var gender = document.querySelector('input[name="gender"]:checked');
+                if (!gender) {
+                    alert("Please select your gender.");
+                    return;
+                }
+                gender = gender.value;
+    
+    
+                var age = parseInt(document.getElementById("ageInput").value);
+                if (isNaN(age) || age <= 0) {
+                    alert("Please enter a valid age.");
+                    return;
+                }
+    
+
+                if ((gender === "male" && age >= 25 && age <= 65) ||
+                    (gender === "female" && age >= 21 && age <= 61)) {
+                    document.getElementById("result").innerHTML = "You are eligible for insurance.";
+                } else {
+                    document.getElementById("result").innerHTML = "You are not eligible for insurance.";
+                }
+        
+            }
+        </script>
+    </body>
+    </html>
+    
