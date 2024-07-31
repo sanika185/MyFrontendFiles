@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            overflow: hidden;
+        }
+
+        .right::-webkit-scrollbar {
+            display: none;
+        }
+
+        .main-head button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        .main-head {
+            background-color: rgb(103, 206, 103);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .main-head a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .main-head button {
+            margin: 5px;
+            width: 100px;
+            height: 30px;
+            background-color: white;
+            font-weight: bold;
+        }
+
+        .mainbtn {
+            display: flex;
+            justify-content: center;
+        }
+
+        .mainbody {
+            padding: 10px;
+            display: grid;
+            grid-template-columns: 2fr 6fr;
+        }
+
+        .left {
+            padding: 5px;
+            height: 88vh;
+            display: grid;
+            grid-template-rows: 1fr 2.5fr 3fr;
+            grid-gap: 2px;
+
+        }
+
+        .right {
+            display: grid;
+            overflow: auto;
+            grid-template-columns: repeat(4, auto);
+            grid-row-gap: 10px;
+            column-gap: 20px;
+            padding: 5px;
+            height: 88vh;
+            justify-content: space-between;
+        }
+
+        .one,
+        .two,
+        .three {
+            padding: 10px;
+            border: 2px solid black;
+        }
+
+        .radiobtn {
+            margin-left: 20px;
+            font-size: 20px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        i {
+            font-size: 20px;
+            position: relative;
+            bottom: 46px;
+            left: 330px;
+
+        }
+
+        .search input {
+            border: 2px solid black;
+            height: 100%;
+            padding: 5px;
+            font-size: large;
+            border-radius: 10px;
+            width: 350px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            height: 350px;
+            width: 250px;
+            border: 2px solid black;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            
+
+        }
+
+        .cardback {
+            height: 350px;
+            width: 250px;
+            border: 2px solid rgb(255, 5, 5);
+            border-radius: 20px;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+
+        }
+
+        .cardback i {
+            color: white;
+            font-size: 20px;
+        }
+
+        .card img {
+            height: 60%;
+            width: 100%;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            object-fit: cover;
+
+        }
+
+        .card pre span {
+            font-size: 20px;
+            font-weight: bolder;
+        }
+
+        #span {
+            text-decoration: line-through;
+        }
+
+        #hr {
+            width: 60%;
+            padding: 2px;
+            background-color: red;
+        }
+
+        hr {
+            width: 90%;
+        }
+
+        .input {
+            margin-left: 10px;
+            width: 140px;
+            padding: 2px;
+            border: 2px solid black;
+        }
+
+        .card a {
+            display: block;
+            position: relative;
+            top: 9px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #brandinfo {
+            position: relative;
+            bottom: 20px;
+            height: 85%;
+        }
+
+        #brandinfo pre {
+            display: flex;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        #brandinfo pre {
+            margin-bottom: 1px;
+            margin-top: 9px;
+            justify-content: space-between;
+        }
+
+        .flip-box {
+            background-color: transparent;
+            perspective: 1000px;
+        }
+
+        .flip-box-inner {
+            position: relative;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        /*
+        .flip-box:hover .flip-box-inner {
+            transform: rotateY(180deg);
+        }
+        */
+        
+    </style>
+</head>
+
+<body>
+    <div class="main-head">
+        <a href="./index.html">
+            <h1 style="margin-left:10px ;">Stanley's Pharmacy</h1>
+        </a>
+        <div class="mainbtn">
+            <a href="./signup.html"><button>Sign Up</button></a>
+            <a href="./login.html"><button>Login</button></a>
+        </div>
+    </div>
+    <div class="mainbody">
+        <div class="left">
+            <div class="one">
+                <h3>Category</h3>
+                <div class="radiobtn">
+                    <input type="radio" name="category" id="cat1">Category : 1
+                </div>
+                <div class="radiobtn">
+                    <input type="radio" name="category" id="cat1">Category : 2
+                </div>
+                <div class="radiobtn">
+                    <input type="radio" name="category" id="cat1">Category : 3
+                </div>
+
+            </div>
+            <div class="two">
+                <h3>Sub Category</h3>
+                <div class="radiobtn">
+                    <input type="radio" name="category" id="cat2">Sub Category : 1
+                </div>
+                <div class="radiobtn">
+                    <input type="radio" name="category" id="cat2">Sub Category : 2
+                </div>
+                <div class="radiobtn">
+                    <input type="radio" name="category" id="cat2">Sub Category : 3
+                </div>
+                <div class="radiobtn">
+                    <input type="radio" name="category" id="cat2">Sub Category : 4
+                </div>
+                <div class="radiobtn">
+                    <input type="radio" name="category" id="cat2">Sub Category : 5
+                </div>
+                <div class="radiobtn">
+                    <input type="radio" name="category" id="cat2">Sub Category : 4
+                </div>
+                <div class="radiobtn">
+                    <input type="radio" name="category" id="cat2">Sub Category : 5
+                </div>
+            </div>
+            <div class="three">
+                <div class="search">
+                    <input type="text" name="" id="" placeholder="Brand Name">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div id="brandinfo">
+                    <pre>Lorem ipsum dolor sit amet. <span>5</span></pre>
+                    <pre>Lorem ipsum dolor sit amet. <span>8</span></pre>
+                    <pre>Lorem ipsum dolor sit amet. <span>12</span></pre>
+                    <pre>Lorem ipsum dolor sit amet. <span>17</span></pre>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="card">
+                        <img src="./img/img1.jpg" alt="" srcset="">
+                        <hr id="hr">
+                        <pre><span id="span">$19.45 </span><span> |</span><span style="color: green;">  15.30</span></pre>
+                        <hr>
+                        <hr>
+                        <span style="margin-left: 20px;">Qtys</span>
+                        <input class="input" type="number" name="" id="">
+                        <a href="">Add to cart</a>
+                    </div>
+                    <div class="cardback">
+                        <h2>INFO</h2>
+                        <i class="fa-brands fa-square-facebook"></i>
+                        <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
+                        <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="card">
+                        <img src="./img/img2.jpg" alt="" srcset="">
+                        <hr id="hr">
+                        <pre><span id="span">$19.45 </span><span> |</span><span style="color: green;">  15.30</span></pre>
+                        <hr>
+                        <hr>
+                        <span style="margin-left: 20px;">Qtys</span>
+                        <input class="input" type="number" name="" id="">
+                        <a href="">Add to cart</a>
+                    </div>
+                    <div class="cardback">
+                        <h2>INFO</h2>
+                        <i class="fa-brands fa-square-facebook"></i>
+                        <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
+                        <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="card">
+                        <img src="./img/img3.jpg" alt="" srcset="">
+                        <hr id="hr">
+                        <pre><span id="span">$19.45 </span><span> |</span><span style="color: green;">  15.30</span></pre>
+                        <hr>
+                        <hr>
+                        <span style="margin-left: 20px;">Qtys</span>
+                        <input class="input" type="number" name="" id="">
+                        <a href="">Add to cart</a>
+                    </div>
+                    <div class="cardback">
+                        <h2>INFO</h2>
+                        <i class="fa-brands fa-square-facebook"></i>
+                        <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
+                        <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="card">
+                        <img src="./img/img4.jpg" alt="" srcset="">
+                        <hr id="hr">
+                        <pre><span id="span">$19.45 </span><span> |</span><span style="color: green;">  15.30</span></pre>
+                        <hr>
+                        <hr>
+                        <span style="margin-left: 20px;">Qtys</span>
+                        <input class="input" type="number" name="" id="">
+                        <a href="">Add to cart</a>
+                    </div>
+                    <div class="cardback">
+                        <h2>INFO</h2>
+                        <i class="fa-brands fa-square-facebook"></i>
+                        <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
+                        <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="card">
+                        <img src="./img/img5.jpg" alt="" srcset="">
+                        <hr id="hr">
+                        <pre><span id="span">$19.45 </span><span> |</span><span style="color: green;">  15.30</span></pre>
+                        <hr>
+                        <hr>
+                        <span style="margin-left: 20px;">Qtys</span>
+                        <input class="input" type="number" name="" id="">
+                        <a href="">Add to cart</a>
+                    </div>
+                    <div class="cardback">
+                        <h2>INFO</h2>
+                        <i class="fa-brands fa-square-facebook"></i>
+                        <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
+                        <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="card">
+                        <img src="./img/img6.jpg" alt="" srcset="">
+                        <hr id="hr">
+                        <pre><span id="span">$19.45 </span><span> |</span><span style="color: green;">  15.30</span></pre>
+                        <hr>
+                        <hr>
+                        <span style="margin-left: 20px;">Qtys</span>
+                        <input class="input" type="number" name="" id="">
+                        <a href="">Add to cart</a>
+                    </div>
+                    <div class="cardback">
+                        <h2>INFO</h2>
+                        <i class="fa-brands fa-square-facebook"></i>
+                        <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
+                        <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="card">
+                        <img src="./img/img7.jpg" alt="" srcset="">
+                        <hr id="hr">
+                        <pre><span id="span">$19.45 </span><span> |</span><span style="color: green;">  15.30</span></pre>
+                        <hr>
+                        <hr>
+                        <span style="margin-left: 20px;">Qtys</span>
+                        <input class="input" type="number" name="" id="">
+                        <a href="">Add to cart</a>
+                    </div>
+                    <div class="cardback">
+                        <h2>INFO</h2>
+                        <i class="fa-brands fa-square-facebook"></i>
+                        <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
+                        <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="card">
+                        <img src="./img/img8.jpg" alt="" srcset="">
+                        <hr id="hr">
+                        <pre><span id="span">$19.45 </span><span> |</span><span style="color: green;">  15.30</span></pre>
+                        <hr>
+                        <hr>
+                        <span style="margin-left: 20px;">Qtys</span>
+                        <input class="input" type="number" name="" id="">
+                        <a href="">Add to cart</a>
+                    </div>
+                    <div class="cardback">
+                        <h2>INFO</h2>
+                        <i class="fa-brands fa-square-facebook"></i>
+                        <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
+                        <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="card">
+                        <img src="./img/img9.jpg" alt="" srcset="">
+                        <hr id="hr">
+                        <pre><span id="span">$19.45 </span><span> |</span><span style="color: green;">  15.30</span></pre>
+                        <hr>
+                        <hr>
+                        <span style="margin-left: 20px;">Qtys</span>
+                        <input class="input" type="number" name="" id="">
+                        <a href="">Add to cart</a>
+                    </div>
+                    <div class="cardback">
+                        <h2>INFO</h2>
+                        <i class="fa-brands fa-square-facebook"></i>
+                        <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
+                        <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="card">
+                        <img src="./img/img10.jpg" alt="" srcset="">
+                        <hr id="hr">
+                        <pre><span id="span">$19.45 </span><span> |</span><span style="color: green;">  15.30</span></pre>
+                        <hr>
+                        <hr>
+                        <span style="margin-left: 20px;">Qtys</span>
+                        <input class="input" type="number" name="" id="">
+                        <a href="">Add to cart</a>
+                    </div>
+                    <div class="cardback">
+                        <h2>INFO</h2>
+                        <i class="fa-brands fa-square-facebook"></i>
+                        <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
+                        <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="card">
+                        <img src="./img/img1.jpg" alt="" srcset="">
+                        <hr id="hr">
+                        <pre><span id="span">$19.45 </span><span> |</span><span style="color: green;">  15.30</span></pre>
+                        <hr>
+                        <hr>
+                        <span style="margin-left: 20px;">Qtys</span>
+                        <input class="input" type="number" name="" id="">
+                        <a href="">Add to cart</a>
+                    </div>
+                    <div class="cardback">
+                        <h2>INFO</h2>
+                        <i class="fa-brands fa-square-facebook"></i>
+                        <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
+                        <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="card">
+                        <img src="./img/img4.jpg" alt="" srcset="">
+                        <hr id="hr">
+                        <pre><span id="span">$19.45 </span><span> |</span><span style="color: green;">  15.30</span></pre>
+                        <hr>
+                        <hr>
+                        <span style="margin-left: 20px;">Qtys</span>
+                        <input class="input" type="number" name="" id="">
+                        <a href="">Add to cart</a>
+                    </div>
+                    <div class="cardback">
+                        <h2>INFO</h2>
+                        <i class="fa-brands fa-square-facebook"></i>
+                        <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
+                        <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="https://kit.fontawesome.com/828b92339c.js" crossorigin="anonymous"></script>
+
+</html>

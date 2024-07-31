@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            overflow: hidden;
+        }
+
+        .main-head button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .main-head {
+            background-color: rgb(103, 206, 103);
+            display: flex;
+            color: white;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .main-head button {
+            margin: 5px;
+            width: 100px;
+            height: 30px;
+            background-color: white;
+            font-weight: bold;
+        }
+        .main-head a{
+            text-decoration: none   ;
+            color: white;
+        }
+
+        .mainbtn {
+            display: flex;
+            justify-content: center;
+        }
+        .login
+        {
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .box
+        {
+            position: relative;
+            font-family: 'Courier New', Courier, monospace;
+            height: 250px;
+            width: 600px;
+            border: 2px solid black;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        .box h1{
+            color: green;
+            font-size: 50px;
+            margin: 10px;
+        }
+        .box input{
+            width: 578px;
+            margin-bottom: 5px;
+            border: 2px solid black;
+            display: block;
+            padding: 10px;
+            font-size: large;
+        }
+        .box button:hover
+        {
+            color: green;
+            background-color: lightyellow;
+        }
+        .box button
+        {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: green;
+            padding: 10px;
+            width: 150px;
+            font-size: 25px;
+            font-weight: bold;
+            color: white;
+            align-self: flex-end;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-head">
+        <a href="./index.html"><h1 style="margin-left:10px ;">Stanley's Pharmacy</h1></a>
+        <div class="mainbtn">
+            <a href="./signup.html"><button>Sign Up</button></a>
+            <a href="./login.html"><button>Login</button></a>
+        </div>
+    </div>
+    <div class="login">
+        <div class="box">
+            <h1>Login</h1>
+            <input type="email" name="email" id="" placeholder="Email ID">
+            <input type="password" name="email" id="" placeholder="Password">
+            <button>Login</button>
+        </div>
+    </div>
+
+</body>
+<script src="https://kit.fontawesome.com/828b92339c.js" crossorigin="anonymous"></script>
+
+</html>

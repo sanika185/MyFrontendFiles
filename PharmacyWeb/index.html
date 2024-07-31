@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        .example::-webkit-scrollbar {
+            display: none;
+        }
+
+        .main-head button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .main-head {
+            background-color: rgb(103, 206, 103);
+            display: flex;
+            color: white;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .main-head a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .main-head button {
+            margin: 5px;
+            width: 100px;
+            height: 30px;
+            background-color: white;
+            font-weight: bold;
+        }
+
+        .mainbtn {
+            display: flex;
+            justify-content: center;
+        }
+
+        .imgs {
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .imgs img {
+            width: 170px;
+            height: 170px;
+            border: 1px solid black;
+            object-fit: cover;
+        }
+
+        .info {
+            text-align: justify;
+            padding: 20px;
+
+        }
+
+        .cardbox {
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+            overflow-x: scroll;
+            position: relative;
+        }
+
+        .cardbox::-webkit-scrollbar {
+            display: none;
+        }
+
+        .card {
+            border: 3px solid black;
+            min-height: 320px;
+            min-width: 200px;
+            text-align: justify;
+            margin-right: 10px;
+            border-radius: 10px;
+            
+        }
+
+        .first i {
+            display: inline;
+            position: absolute;
+            left: 10px;
+            margin-right: 15px;
+            margin-top: 10px;
+            font-size: 20px;
+            color: white;
+
+        }
+
+        .first i:hover {
+            font-size: 35px;
+        }
+
+        .first {
+            position: relative;
+            width: 100%;
+            height: 200px;
+        }
+
+        .first img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .next-button {
+            position: fixed;
+            top: 70%;
+            right: 0px;
+            display: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 24px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .next-button:hover {
+            background-color: #0056b3;
+        }
+
+        .next-button::after {
+            content: '\203A';
+            font-size: 44px;
+        }
+
+        .prev-button {
+            position: fixed;
+            top: 70%;
+            left: 0px;
+            display: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 24px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .prev-button:hover {
+            background-color: #0056b3;
+        }
+
+        .prev-button::before {
+            content: '\2039';
+            font-size: 44px;
+
+        }
+
+        .prev-button.show {
+            display: inline-block;
+            /* Show the element when .show class is added */
+        }
+        .next-button.show {
+            display: inline-block;
+            /* Show the element when .show class is added */
+        }
+        @keyframes rotate {
+            to{
+                transform: rotateY(180deg);
+            }
+        }
+        /*
+        .card:hover{
+            animation: rotate 2s;
+            transform-style: preserve-3d;
+            transition: transform 2s;
+            transform-origin: center;
+        }*/
+    </style>
+</head>
+
+<body class="example">
+    <div class="page">
+        <div class="main-head">
+            <a href="./index.html">
+                <h1 style="margin-left:10px ;">Stanley's Pharmacy</h1>
+            </a>
+            <div class="mainbtn">
+                <a href="./signup.html"><button>Sign Up</button></a>
+                <a href="./login.html"><button>Login</button></a>
+            </div>
+        </div>
+        <div class="imgs">
+            <img src="./img/img12.jpg" alt="" srcset="">
+            <img src="./img/img13.jpg" alt="" srcset="">
+            <img src="./img/img14.jpg" alt="" srcset="">
+            <img src="./img/img15.jpg" alt="" srcset="">
+            <img src="./img/img16.jpg" alt="" srcset="">
+            <img src="./img/img17.jpg" alt="" srcset="">
+            <img src="./img/img19.jpg" alt="" srcset="">
+            <img src="./img/img18.jpg" alt="" srcset="">
+        </div>
+        <div class="info">
+            <h3>Lorem, ipsum.</h3>
+            <p><span style="margin-left: 100px;">Lorem ipsum</span> dolor sit amet consectetur adipisicing elit.
+                Incidunt Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium, repellat doloribus.
+                Quas, consequatur voluptatem officia illo quo rerum qui, suscipit magnam ducimus porro unde impedit
+                laborum neque corrupti quis saepe. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi
+                odit deleniti voluptatibus quibusdam tenetur, qui eligendi ad repellat soluta atque voluptatem
+                accusantium vero asperiores natus, suscipit voluptatum aliquam harum! Commodi. vero dolores beatae
+                tempore commodi quibusdam ipsum accusantium possimus dolorum repudiandae, nemo dignissimos aliquam
+                labore debitis natus explicabo neque obcaecati nihil!</p>
+            <p><span style="margin-left: 100px;">Incidunt Lorem ipsum</span> dolort. Incidunt Lorem ipsum dolor, sit
+                amet consectetur adipisicing elit. Praesentium,aliquam labore debitis natus explicabo neque obcaecati
+                nihil! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem itaque eius ut eveniet illo.
+                Dicta unde aspernatur non magni fugiat molestiae dignissimos similique eaque quidem eveniet quibusdam
+                necessitatibus, nisi esse. Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit corrupti
+                ducimus cumque sit cupiditate in quia odit praesentium quis doloribus tempore, accusamus perspiciatis,
+                adipisci quisquam optio dolorum inventore hic asperiores?</p>
+        </div>
+        <div class="cardbox">
+            <div class="card">
+                <div class="first">
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
+                    <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
+                    <a href="./medicine.html"><img src="./img/img1.jpg" alt=""
+                            srcset=""></a>
+
+                </div>
+                <div class="second" style="padding: 5px;">
+                    <h4 style="margin-top: 9px;margin-bottom: 1px">Lorem, ipsum.</h4>
+                    <p style="font-size: x-small;"><span style="margin-left: 10px;">Incidunt Lorem
+                            ipsum</span> dolort. Incidunt Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Praesentium,aliquam labore debitis natus Lorem ipsum dolor sit amet.</p>
+                </div>
+
+            </div>
+            <div class="card">
+                <div class="first">
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
+                    <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
+                    <a href="./medicine.html"><img src="./img/img2.jpg"
+                            alt="" srcset=""></a>
+                </div>
+                <div class="second" style="padding: 5px;">
+                    <h4 style="margin-top: 9px;margin-bottom: 1px">Lorem, ipsum.</h4>
+                    <p style="font-size: x-small;"><span style="margin-left: 10px;">Incidunt Lorem
+                            ipsum</span> dolort. Incidunt Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Praesentium,aliquam labore debitis natus Lorem ipsum dolor sit amet.</p>
+                </div>
+
+            </div>
+            <div class="card">
+                <div class="first">
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
+                    <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
+                    <a href="./medicine.html"><img
+                            src="./img/img3.jpg" alt=""
+                            srcset=""></a>
+                </div>
+                <div class="second" style="padding: 5px;">
+                    <h4 style="margin-top: 9px;margin-bottom: 1px">Lorem, ipsum.</h4>
+                    <p style="font-size: x-small;"><span style="margin-left: 10px;">Incidunt Lorem
+                            ipsum</span> dolort. Incidunt Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Praesentium,aliquam labore debitis natus Lorem ipsum dolor sit amet.</p>
+                </div>
+
+            </div>
+            <div class="card">
+                <div class="first">
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
+                    <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
+                    <a href="./medicine.html"><img src="./img/img4.jpg"
+                            alt="" srcset=""></a>
+                </div>
+                <div class="second" style="padding: 5px;">
+                    <h4 style="margin-top: 9px;margin-bottom: 1px">Lorem, ipsum.</h4>
+                    <p style="font-size: x-small;"><span style="margin-left: 10px;">Incidunt Lorem
+                            ipsum</span> dolort. Incidunt Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Praesentium,aliquam labore debitis natus Lorem ipsum dolor sit amet.</p>
+                </div>
+
+            </div>
+            <div class="card">
+                <div class="first">
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
+                    <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
+                    <a href="./medicine.html"><img src="./img/img5.jpg" alt=""
+                            srcset=""></a>
+                </div>
+                <div class="second" style="padding: 5px;">
+                    <h4 style="margin-top: 9px;margin-bottom: 1px">Lorem, ipsum.</h4>
+                    <p style="font-size: x-small;"><span style="margin-left: 10px;">Incidunt Lorem
+                            ipsum</span> dolort. Incidunt Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Praesentium,aliquam labore debitis natus Lorem ipsum dolor sit amet.</p>
+                </div>
+
+            </div>
+            <div class="card">
+                <div class="first">
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
+                    <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
+                    <a href="./medicine.html"><img
+                            src="./img/img6.jpg" alt=""
+                            srcset=""></a>
+                </div>
+                <div class="second" style="padding: 5px;">
+                    <h4 style="margin-top: 9px;margin-bottom: 1px">Lorem, ipsum.</h4>
+                    <p style="font-size: x-small;"><span style="margin-left: 10px;">Incidunt Lorem
+                            ipsum</span> dolort. Incidunt Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Praesentium,aliquam labore debitis natus Lorem ipsum dolor sit amet.</p>
+                </div>
+
+            </div>
+            <div class="card">
+                <div class="first">
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
+                    <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
+                    <a href="./medicine.html"><img
+                            src="./img/img7.jpg" alt=""
+                            srcset=""></a>
+                </div>
+                <div class="second" style="padding: 5px;">
+                    <h4 style="margin-top: 9px;margin-bottom: 1px">Lorem, ipsum.</h4>
+                    <p style="font-size: x-small;"><span style="margin-left: 10px;">Incidunt Lorem
+                            ipsum</span> dolort. Incidunt Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Praesentium,aliquam labore debitis natus Lorem ipsum dolor sit amet.</p>
+                </div>
+
+            </div>
+            <div class="card">
+                <div class="first">
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
+                    <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
+                    <img src="./img/img8.jpg" alt="" srcset="">
+                    <a href="./medicine.html"></a>
+                </div>
+                <div class="second" style="padding: 5px;">
+                    <h4 style="margin-top: 9px;margin-bottom: 1px">Lorem, ipsum.</h4>
+                    <p style="font-size: x-small;"><span style="margin-left: 10px;">Incidunt Lorem
+                            ipsum</span> dolort. Incidunt Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Praesentium,aliquam labore debitis natus Lorem ipsum dolor sit amet.</p>
+                </div>
+
+            </div>
+            <div class="card">
+                <div class="first">
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
+                    <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
+                    <a href="./medicine.html"><img
+                            src="./img/img9.jpg" alt=""
+                            srcset=""></a>
+                </div>
+                <div class="second" style="padding: 5px;">
+                    <h4 style="margin-top: 9px;margin-bottom: 1px">Lorem, ipsum.</h4>
+                    <p style="font-size: x-small;"><span style="margin-left: 10px;">Incidunt Lorem
+                            ipsum</span> dolort. Incidunt Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Praesentium,aliquam labore debitis natus Lorem ipsum dolor sit amet.</p>
+                </div>
+
+            </div>
+            <div class="card">
+                <div class="first">
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
+                    <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
+                    <a href="./medicine.html"><img src="./img/img10.jpg" alt=""
+                            srcset=""></a>
+                </div>
+                <div class="second" style="padding: 5px;">
+                    <h4 style="margin-top: 9px;margin-bottom: 1px">Lorem, ipsum.</h4>
+                    <p style="font-size: x-small;"><span style="margin-left: 10px;">Incidunt Lorem
+                            ipsum</span> dolort. Incidunt Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Praesentium,aliquam labore debitis natus Lorem ipsum dolor sit amet.</p>
+                </div>
+
+            </div>
+            <div class="card">
+                <div class="first">
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
+                    <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
+                    <a href="./medicine.html"><img
+                            src="./img/img11.jpg" alt=""
+                            srcset=""></a>
+                </div>
+                <div class="second" style="padding: 5px;">
+                    <h4 style="margin-top: 9px;margin-bottom: 1px">Lorem, ipsum.</h4>
+                    <p style="font-size: x-small;"><span style="margin-left: 10px;">Incidunt Lorem
+                            ipsum</span> dolort. Incidunt Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Praesentium,aliquam labore debitis natus Lorem ipsum dolor sit amet.</p>
+                </div>
+
+            </div>
+            <button class="next-button"></button>
+            <button class="prev-button"></button>
+        </div>
+
+
+
+    </div>
+    <script>
+        const cardbox = document.querySelector('.cardbox');
+        const prevButton = document.querySelector('.prev-button');
+        const nextButton = document.querySelector('.next-button');
+
+        nextButton.addEventListener('click', function () {
+            cardbox.scrollBy({
+                left: 340, // Adjust scroll distance as needed
+                behavior: 'smooth'
+            });
+        });
+
+        prevButton.addEventListener('click', function () {
+            cardbox.scrollBy({
+                left: -340, // Adjust scroll distance as needed
+                behavior: 'smooth'
+            });
+        });
+
+
+        // Add scroll event listener
+        window.addEventListener('scroll', function () {
+            // Adjust scroll position as needed
+            if (window.scrollY > 100) { // Show element when scrolled beyond 500px
+                prevButton.classList.add('show');
+                nextButton.classList.add('show');
+            } else {
+                prevButton.classList.remove('show');
+                nextButton.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+<script src="https://kit.fontawesome.com/828b92339c.js" crossorigin="anonymous"></script>
+
+</html>
