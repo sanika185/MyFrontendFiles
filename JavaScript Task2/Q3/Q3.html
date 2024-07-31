@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacation Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Vacation Planner</h1>
+        <form id="vacationForm">
+            <label for="preference">Select your vacation preference:</label>
+            <select id="preference" name="preference">
+                <option value="beach">Beach</option>
+                <option value="mountain">Mountain</option>
+                <option value="historical">Historical</option>
+                <option value="other">Other</option>
+            </select>
+            <button type="submit">Get Recommendations</button>
+        </form>
+        <div id="result">
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

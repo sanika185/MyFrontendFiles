@@ -1,0 +1,107 @@
+body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f0f0f0, #c1c1c1);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-weight: bold;
+      color: white;
+}
+
+.container {
+      background-image: url("./images/vacation.jpg");
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 100%;
+      max-width: 700px;
+      height: 80%;
+      text-align: center;
+}
+
+h1 {
+      font-size: 50px;
+      margin-bottom: 20px;
+      color: #786a6aec;
+}
+
+label {
+      display: block;
+      margin-bottom: 10px;
+}
+
+select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 17px;
+}
+
+button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+}
+
+button:hover {
+      background-color: #0056b3;
+}
+
+#result {
+      display: flex;
+      column-gap: 20px;
+      margin-top: 20px;
+      font-size: 18px;
+      color: #555;
+}
+
+.destination {
+      position: relative;
+      object-fit: cover;
+      width: 300px;
+      height: 300px;
+      border-radius: 0px;
+      overflow: hidden;
+      border-radius: 20px;
+      transition: transform 0.3s;
+}
+
+.destination img {
+      object-fit: cover;
+      width: 300px;
+      height: 300px;
+
+}
+
+.destination:hover {
+      transform: scale(1.05);
+}
+
+.destination:hover h3 {
+      bottom: 0;
+}
+
+.destination h3 {
+      margin: 0;
+      bottom: -40px;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      text-align: center;
+      position: absolute;
+      width: 100%;
+      font-size: 16px;
+      transition: all 0.5s ease;
+}

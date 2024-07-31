@@ -1,0 +1,104 @@
+body {
+      font-family: Arial, sans-serif;
+      background: url('./images/restaurant-background.avif') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #fff;
+}
+
+.container {
+      background-color: rgba(0, 0, 0, 0.137);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.253);
+      animation: fadeIn 1s ease-in-out;
+      backdrop-filter: blur(6px);
+}
+
+@keyframes fadeIn {
+      from {
+            opacity: 0;
+      }
+
+      to {
+            opacity: 1;
+      }
+}
+
+.title {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #ffdf00;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.form-group {
+      margin-bottom: 15px;
+}
+
+label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 1.2em;
+}
+
+input {
+      width: calc(100% - 22px);
+      padding: 10px;
+      background-color: transparent;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+      margin-bottom: 10px;
+      transition: transform 0.3s ease;
+      color:white;
+}
+
+input::placeholder
+{
+      color: white;
+}
+
+input:focus {
+      outline: none;
+      transform: scale(1.05);
+}
+
+button {
+      width: 100%;
+      padding: 10px;
+      background-color: #ff7e5f;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+}
+
+button:hover {
+      background-color: #feb47b;
+}
+
+#result {
+      margin-top: 20px;
+      font-size: 1.5em;
+      animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+      from {
+            transform: translateY(20px);
+            opacity: 0;
+      }
+
+      to {
+            transform: translateY(0);
+            opacity: 1;
+      }
+}

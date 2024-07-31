@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Screening</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="maintitle">
+        <pre><h2 id="title"><span>To</span> win in the <span>marketplace</span>,
+
+        you must first win in the <span>workplace</span>.</h2></pre>
+    </div>
+    <div class="container">
+        <h1>Job Application Screening</h1>
+        <form id="applicationForm">
+            <label for="degree">Select your degree:</label>
+            <select id="degree" name="degree">
+                <option value="bachelor">Bachelor's</option>
+                <option value="master">Master's</option>
+                <option value="phd">Ph.D.</option>
+            </select>
+
+            <label for="experience">Years of relevant experience:</label>
+            <input type="number" id="experience" name="experience" min="0">
+
+            <button type="submit">Evaluate Application</button>
+        </form>
+        <div id="result">
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
