@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment No 7</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        #div1 {
+            background-color: aqua;
+            color: black; /* Set font color */
+            width: 100px;
+            height: 100px;
+            outline: solid 1px black;
+            margin: auto;
+            padding: 50px;
+            position: relative; /* Add position property */
+        }
+        #buttonContainer {
+            text-align: center; /* Center-align the buttons */
+        }
+        button {
+            display: inline-block; /* Display buttons in-line */
+            width: 100px;
+            margin-bottom: 10px; /* Add some space between buttons */
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="buttonContainer">
+    <button id="moveButton">Move In/Out</button>
+    <button id="modifyButton">Modify</button>
+    <button id="toggleButton">Toggle</button>
+    <button id="fadeInButton">Fade In</button>
+</div>
+<br>
+<div id="div1">HELLO
+    <div id="div2" class="hidden">HII</div>
+    <div id="div3" class="hidden">My Name is</div>
+    <div id="div4" class="hidden">Sanika</div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        var isMovedIn = false; // Variable to track if div1 is moved in or out
+        
+        // Animation 1: Move div1 in or out based on current position
+        $("#moveButton").click(function(){
+            if (isMovedIn) {
+                // Move div1 out
+                $("#div1").animate({left: '250px'}, "slow");
+            } else {
+                // Move div1 in
+                $("#div1").animate({left: '0'}, "slow");
+            }
+            isMovedIn = !isMovedIn; // Toggle the state
+        });
+        
+        // Animation 2: Modify div1's properties (opacity, height, width)
+        $("#modifyButton").click(function(){
+            $("#div1").animate({
+                opacity: '0.5',
+                height: '150px',
+                width: '150px'
+            }, "slow", function(){
+                // Change font color to red after animation
+                $("#div1").css("color", "darkblack");
+                $("#div1").css("background-color", "red");
+            });
+        });
+        
+        // Animation 3: Toggle div1's height and fade
+        $("#toggleButton").click(function(){
+            $("#div1").animate({
+            height: 'toggle'
+            });
+            });
+        
+        // Animation 4: Fade in div2, div3, and div4 sequentially
+            $("#fadeInButton").click(function(){
+                $("#div2").fadeToggle("slow", function(){
+                    $("#div3").fadeToggle("slow", function(){
+                        $("#div4").fadeToggle("slow");
+                    });
+                });
+            });
+        
+        // Additional Animation (commented out)
+        /*
+        $("#flip").click(function(){
+            $("#panel").slideToggle();
+        });
+        */
+    });
+</script>
+
+</body>
+</html>

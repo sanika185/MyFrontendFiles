@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h2>Validation Form</h2>
+    <form onsubmit="return validateForm()">
+        <label for="name">Name :</label><br>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
+
+        <label for="age">Age :</label><br>
+        <input type="number" id="age" name="age" placeholder="Enter your age" required><br><br>
+
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address" placeholder="Enter your address" required><br><br>
+
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" id="dob" name="dob" required><br><br>
+
+        <label for="aadhaar">Aadhaar Card Number:</label><br>
+        <input type="text" id="aadhaar" name="aadhaar" placeholder="Enter your Aadhaar number" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
