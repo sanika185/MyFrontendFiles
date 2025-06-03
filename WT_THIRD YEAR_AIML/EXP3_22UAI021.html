@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ichalkaranji Bus Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: antiquewhite;
+        }
+        .header {
+            background: #004080;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .header img {
+            height: 50px;
+            vertical-align: middle;
+        }
+        .nav {
+            background: #003366;
+            text-align: left;
+            width: 250px;
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+        }
+        .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .nav ul li {
+            position: relative;
+        }
+        .nav ul li a {
+            display: block;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .nav ul li:hover > a, .nav ul li.active > a {
+            background: #ffcc00;
+            color: black;
+        }
+        .nav ul li ul {
+            display: none;
+            background: #f4f4f4;
+            padding-left: 15px;
+        }
+        .nav ul li.active ul {
+            display: block;
+        }
+        .nav ul li ul li a {
+            color: black;
+            padding: 10px;
+            display: block;
+        }
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+        }
+        #s1 
+        {
+            color: red;
+            font-size: 30px;
+        }
+    </style>
+    <script>
+        function toggleMenu(event) {
+            let items = document.querySelectorAll('.nav ul li');
+            items.forEach(item => item.classList.remove('active'));
+            event.currentTarget.parentElement.classList.toggle('active');
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <img src="media/images/bus.png" alt="Ichalkaranji Logo" align="left">
+        <h1>Ichalkaranji Municipal Corporation - Online Bus Booking</h1>
+    </div>
+    
+    <div class="nav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#" onclick="toggleMenu(event)">About Us</a>
+                <ul>
+                    <li><a href="#">Vision and Mission</a></li>
+                    <li><a href="#">Board of Directors</a></li>
+                    <li><a href="#">Our Organization</a></li>
+                    <li><a href="#">Major Achievements</a></li>
+                    <li><a href="#">Statistics</a></li>
+                    <li><a href="#">Financial Performance</a></li>
+                </ul>
+            </li>
+            <li><a href="#" onclick="toggleMenu(event)">Services</a>
+                <ul>
+                    <li><a href="#">Regular Buses</a></li>
+                    <li><a href="#">Rainbow Buses</a></li>
+                    <li><a href="#">Ladius Buses</a></li>
+                    <li><a href="#">Pass Service</a></li>
+                    <li><a href="#">Ichalkaranji Darshan</a></li>
+                </ul>
+            </li>
+            <li><a href="#" onclick="toggleMenu(event)">Journey Planner</a>
+                <ul>
+                    <li><a href="#">RTI</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Citizen Charter</a></li>
+                </ul>
+            </li>
+            <li><a href="#" onclick="toggleMenu(event)">Online Services</a>
+                <ul>
+                    <li><a href="#">Ichalkaranji Darshan</a></li>
+                </ul>
+            </li>
+            <li><a href="#" onclick="toggleMenu(event)">Media Center</a>
+                <ul>
+                    <li><a href="#">Advertisement</a></li>
+                    <li><a href="#">Media Contact</a></li>
+                    <li><a href="#">News and Reports</a></li>
+                    <li><a href="#">Media and Gallery</a></li>
+                    <li><a href="#">Site App</a></li>
+                </ul>
+            </li>
+            <li><a href="#" onclick="toggleMenu(event)">Tenders</a>
+                <ul>
+                    <li><a href="#">Tender Details</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#" onclick="toggleMenu(event)">Language</a>
+                <ul>
+                    <li><a href="#">English</a></li>
+                    <li><a href="#">Marathi</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="content">
+        <div class="title" align="center"> <span id="s1">𝓐𝓹𝓪𝓴𝓲 𝓨𝓪𝓽𝓻𝓪,𝓗𝓾𝓶𝓪𝓻𝓲 𝓙𝓲𝓶𝓶𝓮𝓭𝓪𝓻𝓲!
+        </span></div>
+        <div class="news">Latest News: New bus routes added! Book now!</div>
+        <div class="booking-form">
+            <h2>Book Your Bus</h2>
+            <input type="text" placeholder="From">
+            <input type="text" placeholder="To">
+            <input type="date">
+            <button>Search</button>
+        </div>
+        <div class="timetable">
+            <h2>Bus Timetable</h2>
+            <table border="1">
+                <tr bgcolor="pink">
+                    <th>Bus Date</th>
+                    <th>Bus Time</th>
+                    <th>Bus Number</th>
+                    <th>Location</th>
+                </tr>
+                <tr>
+                    <td>2025-02-10</td>
+                    <td>10:00 AM</td>
+                    <td>IMC101</td>
+                    <td>Ichalkaranji to Rajwada</td>
+                </tr>
+                <tr>
+                    <td>2025-02-10</td>
+                    <td>02:00 PM</td>
+                    <td>IMC102</td>
+                    <td>Ichalkaranji to Sangali Naka</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<!ELEMENT note (title,to, author, year, price)>
+<!ELEMENT to (#PCDATA)>
+ <!ELEMENT title (#PCDATA)>
+    <!ELEMENT author (#PCDATA)>
+    <!ELEMENT year (#PCDATA)>
+    <!ELEMENT price (#PCDATA)>

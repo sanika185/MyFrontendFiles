@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE note [
+  <!ELEMENT note (to,title, author, year, price)>
+  <!ELEMENT to (#PCDATA)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+]>
+<note>
+  <to>Hello</to>
+  <title>The Great Gatsby</title>
+  <author>F. Scott Fitzgerald</author>
+  <year>1925</year>
+  <price> 20.00</price>
+</note>

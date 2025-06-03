@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voter ID Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Voter ID Registration Form</h2>
+        <form id="voterForm" onsubmit="return validateForm()">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Enter a Fullname ">
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required placeholder="Enter DOB">
+
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="age" required placeholder="Enter Age">
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required placeholder="abc123@gmail.com">
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required placeholder="Enter Address"></textarea>
+
+            <label for="AdharNumber">Adhar Number:</label>
+            <input type="tel" id="AdharNumber" name="AdharNumber" required placeholder="123456780954">
+
+            <label for="photo">Upload Photo:</label>
+            <input type="file" id="photo" name="photo" accept="image/*" required>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <p id="error-message" class="error-message"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

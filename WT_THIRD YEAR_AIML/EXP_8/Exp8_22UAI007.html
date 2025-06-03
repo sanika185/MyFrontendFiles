@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment No 8</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        #div1 {
+            background-color: rgb(0, 42, 255);
+            color: black; 
+            width: 100px;
+            height: 100px;
+            outline: solid 1px black;
+            margin: auto;
+            padding: 50px;
+            position: relative; 
+        }
+        #buttonContainer {
+            text-align: center; 
+        }
+        button {
+            display: inline-block; 
+            width: 100px;
+            margin-bottom: 10px; 
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="buttonContainer">
+    <button id="moveButton">Move In/Out</button>
+    <button id="modifyButton">Modify</button>
+    <button id="toggleButton">Toggle</button>
+    <button id="fadeInButton">Fade In</button>
+</div>
+<br>
+<div id="div1">HELLO
+    <div id="div2" class="hidden">HII</div>
+    <div id="div3" class="hidden">My Name is</div>
+    <div id="div4" class="hidden">Sakshi</div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        var isMovedIn = false; 
+        
+        $("#moveButton").click(function(){
+            if (isMovedIn) {
+             
+                $("#div1").animate({left: '250px'}, "slow");
+            } else {
+                $("#div1").animate({left: '0'}, "slow");
+            }
+            isMovedIn = !isMovedIn; 
+        });
+        
+        $("#modifyButton").click(function(){
+            $("#div1").animate({
+                opacity: '0.5',
+                height: '150px',
+                width: '150px'
+            }, "slow", function(){
+                $("#div1").css("color", "darkblack");
+                $("#div1").css("background-color", "red");
+            });
+        });
+        
+        $("#toggleButton").click(function(){
+            $("#div1").animate({
+            height: 'toggle'
+            });
+            });
+        
+            $("#fadeInButton").click(function(){
+                $("#div2").fadeToggle("slow", function(){
+                    $("#div3").fadeToggle("slow", function(){
+                        $("#div4").fadeToggle("slow");
+                    });
+                });
+            });
+        
+       
+    });
+</script>
+</body>
+</html>
